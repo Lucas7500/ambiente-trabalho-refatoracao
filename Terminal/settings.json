@@ -1,0 +1,110 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "initialCols": 90,
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
+        [
+            {
+                "colorScheme": "MacB",
+                "commandline": "C:\\Users\\miguel\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe -NoLogo",
+                "cursorShape": "doubleUnderscore",
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono",
+                    "size": 12.0
+                },
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "opacity": 70,
+                "padding": "8",
+                "source": "Windows.Terminal.PowershellCore",
+                "useAcrylic": true
+            },
+            {
+                "colorScheme": "One Half Dark",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "cursorShape": "doubleUnderscore",
+                "experimental.retroTerminalEffect": true,
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font Mono"
+                },
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Prompt de comando",
+                "opacity": 70,
+                "padding": "5",
+                "useAcrylic": true
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#6b2000",
+            "brightBlack": "#808080",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#e25d23",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#CCCCCC",
+            "green": "#e25d23",
+            "name": "MacB",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        }
+    ],
+    "themes": [],
+    "useAcrylicInTabRow": true
+}
