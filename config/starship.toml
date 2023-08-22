@@ -1,15 +1,17 @@
-format = '''$username$directory$git_branch$git_status$package$nodejs
-$character'''
+# ~/.config/starship.toml
+
+format = '''$username$directory$git_branch$nodejs$python$php$package
+$character '''
 
 [username]
-format = '[Δ](#e25d23 bold) [$user]($style) '
+format = '[Δ](#A52AFF bold) [$user]($style) '
 disabled = false
 show_always = true
 style_root = 'red bold'
 style_user = 'white bold'
 
 [directory]
-format = '[em](#e25d23) $read_only[$path](#D1D1D1) '
+format = '[em](#685AFF) $read_only[$path](#D1D1D1) '
 read_only = '🔒 '
 home_symbol = '🏠'
 truncation_length = 3
@@ -17,11 +19,11 @@ use_os_path_sep = true
 truncation_symbol = '📁/'
 
 [git_branch]
-format = '[no](#e25d23) [$symbol $branch](#D1D1D1) '
-symbol = ''
+format = '[no](#685AFF) [$symbol $branch](#D1D1D1) '
+symbol = '[](#28B9FF)'
 
 [git_status]
-format     = '$all_status$ahead_behind'
+format     = '\($all_status$ahead_behind\)'
 stashed = '⭕ '
 up_to_date = '' #✅
 conflicted = '⛔ '
@@ -34,27 +36,58 @@ modified = '📝×[${count}](#D1D1D1) '
 untracked = '❓×[${count}](#D1D1D1) '
 diverged = '⚠️ 🅰️×[${ahead_count}](#D1D1D1) 🅱️×[${behind_count}](#D1D1D1) '
 
+
 [nodejs]
-format = '[via](#e25d23) [$symbol$version](#D1D1D1) '
-symbol= '🤖 '
+format = '[via](#685AFF) [$symbol($version )]($style)'
 version_format = 'v${raw}'
+symbol = '🤖 '
+disabled = false
+style = '#D1D1D1'
+not_capable_style = 'bold red'
+detect_folders = ['node_modules']
+detect_extensions = ['js', 'mjs', 'cjs', 'ts']
+detect_files = ['package.json', '.node-version', '.nvmrc']
+
 
 [python]
-format = '[$symbol$version]($style) '
-style = 'bold green'
+format = '[via](#685AFF) [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = '🐍 '
+disabled = false
+style = '#D1D1D1'
+pyenv_prefix = 'pyenv '
+version_format = 'v${raw}'
+pyenv_version_name = false
+detect_folders = []
+detect_extensions = ['py']
+python_binary = ['python', 'python3', 'python2']
+detect_files = ['requirements.txt', '.python-version', 'pyproject.toml', 'Pipfile', 'tox.ini', 'setup.py', '__init__.py']
+
+
+[php]
+format = '[via](#685AFF) [$symbol($version )]($style)'
+symbol = '🐘 '
+disabled = false
+style = '#D1D1D1'
+detect_folders = []
+detect_extensions = ['php']
+detect_files = ['composer.json', '.php-version']
+
 
 [package]
-format = '[é](#e25d23) [$symbol$version](#D1D1D1) '
+format = '[é](#685AFF) [$symbol$version](#D1D1D1) '
 symbol= '📦 '
 
+
 [character]
-success_symbol = '[❯](bold blue)'
-error_symbol = '[❯](bold red)'
+success_symbol = '[❯](#28B9FF)'
+error_symbol = '[❯](#DD1B1B)'
+
 
 [battery]
 full_symbol = '🔋'
 charging_symbol = '🔌'
 discharging_symbol = '⚡'
+
 
 [[battery.display]]
 threshold = 30
@@ -64,3 +97,11 @@ style = 'bold red'
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
 format = ' took [$duration]($style)'
+
+
+[hostname]
+ssh_only = false
+trim_at = '.'
+format = '[$hostname]($style)'
+style = 'fg:81 bold'
+disabled = false
