@@ -1,4 +1,5 @@
-format = '''$username$directory$git_branch$git_status$package$nodejs$character'''
+format = '''$username$directory$git_branch$git_status$package$nodejs
+$character'''
 
 [username]
 format = '[Δ](#e25d23 bold) [$user]($style) '
