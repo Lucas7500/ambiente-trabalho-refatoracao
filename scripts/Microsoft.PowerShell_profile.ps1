@@ -2,26 +2,19 @@
 New-Alias v nvim
 New-Alias e explorer
 
-
-# Configuração e inicialização do Starship
-$ENV:STARSHIP_CONFIG = "C:\Users\miguel\.config\starship.toml"
-$ENV:STARSHIP_DISTRO = " "
 Invoke-Expression (&starship init powershell)
+$ENV:STARSHIP_CONFIG = "C:\Users\miguel\.config\starship.toml"
 
-
-# Funções e procedimentos
-function dev {
+function doc {
     param([string]$local)
     Switch ($local) {
-        "web"    { Set-Location -Path "C:/xampp/htdocs" }
-        "macb"   { Set-Location -Path "$HOME/Projetos/MacB" }
-        "miguel" { Set-Location -Path "$HOME/Projetos/Miguel" }
-        "mirage" { Set-Location -Path "$HOME/Projetos/Mirage" }
-        default  { Set-Location -Path "$HOME/Projetos" }
+        "xampp"    { Set-Location -Path "C:/xampp/htdocs" }
+        "laragon"  { Set-Location -Path "C:\laragon\www" }
+        "github"   { Set-Location -Path "$HOME/Documents/Github" }
+        default  { Set-Location -Path "$HOME/Documents" }
     }
     Get-ChildItem
 }
-
 function xx {
     param([Parameter(Mandatory=$true)] [string]$caminho)
     try {
@@ -86,6 +79,7 @@ function gg() {
         Write-Host "Exemplo: novo -nome 'nome do arquivo.txt' -conteudo 'Olá Mundo'"
     }
 }
+
 
 function imprimir_msg {
     param([string]$mensagem, [bool]$nova_linha)
