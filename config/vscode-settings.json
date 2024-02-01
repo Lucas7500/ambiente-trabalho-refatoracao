@@ -1,0 +1,38 @@
+ {
+    "editor.fontFamily": "Hack Nerd Font, monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.8,
+    "editor.mouseWheelZoom": true,
+    "editor.rulers": [80, 120],
+    "editor.fontLigatures": true,
+    "editor.semanticHighlighting.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.labelFormat": "short",
+    "workbench.colorTheme": "MacB (Escuro)",
+    "workbench.iconTheme": "symbols",
+    "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "breadcrumbs.enabled": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "security.workspace.trust.untrustedFiles": "open",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.autoSave": "afterDelay",
+    "update.mode": "manual",
+    "transparent-win.transparency": 0.5,
+    "symbols.hidesExplorerArrows": false,
+    "window.commandCenter": false,
+    "workbench.editor.empty.hint": "hidden",
+    "vscode_custom_css.imports": [
+        "file:///c:/Users/miguel/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.1/dist/updateHandler.js"
+    ],
+    "glassit.alpha": 240,
+    "symbols.folders.associations": {
+        "setup": "folder-config",
+        "templates": "folder-layout",
+        "migrations": "folder-database"
+    }
+}
