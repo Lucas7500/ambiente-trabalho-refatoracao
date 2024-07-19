@@ -129,7 +129,7 @@ function gg {
         git status -s
 
         Write-Host ""
-        imprimir_msg "Adicionando todos os arquivos alterados para o commit..." $true
+        imprimir_msg "Adicionando todos os arquivos alterados para o commit... " $true
         git add .
 
         imprimir_ok
