@@ -23,7 +23,7 @@ function doc {
         "xampp"    { $caminho_base = "C:/xampp/htdocs" }
         "laragon"  { $caminho_base = "C:/laragon/www" }
         "github"   { $caminho_base = "$HOME/Documents/Github" }
-        default    { $caminho_base = "$HOME/Documents" }
+        default    { $caminho_base = "$HOME/Documents" 
     }
 
     if ($projeto) {
