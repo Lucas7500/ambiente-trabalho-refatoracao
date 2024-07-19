@@ -125,32 +125,16 @@ function gg {
         Write-Host "COMMIT RÁPIDO" -ForegroundColor Green
         Write-Host "------ ------" -ForegroundColor Green
 
+        $status = git status -s
+        if ([string]::IsNullOrWhiteSpace($status)) {
+            imprimir_msg "Sem alteração no repositório local." $true
+            imprimir_msg "Operação cancelada!" $true
+            return
+        }
         imprimir_msg "Status atual do repositório:" $true
         git status -s
 
-        Write-Host ""
-        imprimir_msg "Adicionando todos os arquivos alterados para o commit... " $true
-        git add .
-
-        imprimir_ok
-
-        imprimir_msg "Realizando o commit..." $true
-        git commit -m $m
-        Write-Host "    ✅ Commit realizado!" -ForegroundColor Green
-
-        Write-Host ""
-        imprimir_msg "Último histórico de commit realizado:" $true
-        git log -1
-
-        Write-Host ""
-        imprimir_msg "Enviando conteúdo local para o repositório remoto..."$true
-        if ($u) { 
-            git push --set-upstream origin (git branch --show-current) 
-        } 
-        else { 
-            git push 
-        }
-        Write-Host "    ✅ Arquivos enviados!" -ForegroundColor Green
+        
     }
     catch {
         Write-Host "Erro ao realizar commit e push: $_" -ForegroundColor Red
