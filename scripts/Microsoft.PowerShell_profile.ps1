@@ -1,10 +1,13 @@
+# Configura a codificação para UTF-8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
 # Declaração de Alias
 New-Alias v nvim
 New-Alias e explorer
 
 
 Invoke-Expression (&starship init powershell)
-$ENV:STARSHIP_CONFIG = "C:\Users\miguel\.config\starship.toml"
+$ENV:STARSHIP_CONFIG = "C:\Users\Usuario\.config\starship.toml"
 
 
 function doc {
@@ -111,7 +114,10 @@ function xx {
 function gg {
     param (
         [Parameter(Mandatory = $true)]
-        [string]$mensagem
+        [string]$m,
+
+        [Parameter(Mandatory = $false)]
+        [switch]$u
     )
 
     try {
@@ -129,7 +135,7 @@ function gg {
         imprimir_ok
 
         imprimir_msg "Realizando o commit..." $true
-        git commit -m $mensagem
+        git commit -m $m
         Write-Host "    ✅ Commit realizado!" -ForegroundColor Green
 
         Write-Host ""
@@ -138,7 +144,12 @@ function gg {
 
         Write-Host ""
         imprimir_msg "Enviando conteúdo local para o repositório remoto..."$true
-        git push
+        if ($u) { 
+            git push --set-upstream origin (git branch --show-current) 
+        } 
+        else { 
+            git push 
+        }
         Write-Host "    ✅ Arquivos enviados!" -ForegroundColor Green
     }
     catch {
