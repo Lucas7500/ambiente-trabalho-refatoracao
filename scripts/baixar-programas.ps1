@@ -1,30 +1,28 @@
-# Produtividade
-winget install -e --id Git.Git                          # Controle de Versão
-winget install -e --id Yarn.Yarn                        # Gerenciador de Pacotes
-winget install -e --id Neovim.Neovim                    # Editor de Texto
-winget install -e --id Starship.Starship                # Prompt de Comando
-
 # Desenvolvimento
-winget install -e --id OpenJS.NodeJS                    # Plataforma JavaScript
-winget install -e --id Python.Python.3.11               # Linguagem de Programação
-winget install -e --id GitHub.GitHubDesktop             # Plataforma de Desenvolvimento Colaborativo
-winget install -e --id Microsoft.VisualStudioCode       # Editor de Código
+winget install -e --id Git.Git                                # Controle de versão
+winget install -e --id 7zip.7zip                              # Gerenciador de arquivos compactados
+winget install -e --id OpenJS.NodeJS                          # Ambiente de execução JavaScript
+winget install -e --id Python.Python                          # Linguagem de programação Python
+
+# Produtividade
+winget install -e --id Microsoft.VisualStudioCode             # Editor de código leve
+winget install -e --id Microsoft.VisualStudio.2022.Community  # IDE completa
+winget install -e --id Google.Chrome                          # Navegador web
+winget install -e --id Obsidian.Obsidian                      # Aplicativo de notas e organização
+winget install -e --id Starship.Starship                      # Prompt de comando customizável
+winget install -e --id Docker.DockerDesktop                   # Gerenciador de contêiners
+winget install -e --id OBSProject.OBSStudio                   # Gravação e transmissão de vídeo
+winget install -e --id TheDocumentFoundation.LibreOffice      # Suíte de escritório
 
 # Design e Criatividade
-winget install -e --id Figma.Figma                      # Design de Interface
-winget install -e --id Notion.Notion                    # Organização de Informações
-winget install -e --id Insomnia.Insomnia                # Teste de API
+winget install -e --id Figma.Figma                            # Design de interfaces
+winget install -e --id Insomnia.Insomnia                      # Teste de API
 
 # Comunicação e Social
-winget install -e --id Google.Chrome                    # Navegador Web
-winget install -e --id Spotify.Spotify                  # Streaming de Música
-winget install -e --id Discord.Discord                  # Comunicação por Voz
-winget install -e --id WhatsApp.WhatsApp                # Mensagens Instantâneas
+winget install -e --id Microsoft.Teams                        # Comunicação e colaboração
+winget install -e --id Spotify.Spotify                        # Streaming de música
+winget install -e --id WhatsApp.WhatsApp                      # Mensagens instantâneas
 
 # Ferramentas de Rede e Segurança
-winget install -e --id Insecure.Nmap                    # Scanner de Rede
-winget install -e --id WiresharkFoundation.Wireshark    # Analisador de Tráfego de Rede
-
-# Jogos
-winget install -e --id Valve.Steam                      # Plataforma de Jogos
-winget install -e --id EpicGames.EpicGamesLauncher      # Lançador de Jogos da Epic Games
+winget install -e --id Insecure.Nmap                          # Scanner de rede
+winget install -e --id WiresharkFoundation.Wireshark          # Analisador de tráfego de rede
