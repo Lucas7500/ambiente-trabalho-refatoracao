@@ -20,10 +20,10 @@ function Imprimir-Mensagem {
         )
 
         switch ($tipo.ToLower()) {
-            'sucesso' { return @{ EstrelaCor = [ConsoleColor]::Green; MensagemCor = [ConsoleColor]::Green }}
-            'aviso' { return @{ EstrelaCor = [ConsoleColor]::Yellow; MensagemCor = [ConsoleColor]::White }}
-            'erro' { return @{ EstrelaCor = [ConsoleColor]::Red; MensagemCor = [ConsoleColor]::Red }}
-            default { return @{ EstrelaCor = [ConsoleColor]::White; MensagemCor = [ConsoleColor]::White }}
+            'sucesso' { return @{ EstrelaCor = [ConsoleColor]::Green; MensagemCor = [ConsoleColor]::Green } }
+            'aviso' { return @{ EstrelaCor = [ConsoleColor]::Yellow; MensagemCor = [ConsoleColor]::White } }
+            'erro' { return @{ EstrelaCor = [ConsoleColor]::Red; MensagemCor = [ConsoleColor]::Red } }
+            default { return @{ EstrelaCor = [ConsoleColor]::White; MensagemCor = [ConsoleColor]::White } }
         }
     }
 
@@ -39,7 +39,7 @@ function Imprimir-Mensagem {
     Write-Host $mensagem -ForegroundColor $cores.MensagemCor -NoNewline
     
     if ($nova_linha) { 
-        Write-Host "" 
+        Write-Host ""
     }
 }
 
@@ -63,14 +63,14 @@ function Texto-Justificado {
 
     $tamanhoDoEspacamento = $TAMANHO_DO_TERMINAL - ($textoDireita.Length + $textoEsquerda.Length)
 
-    if ($tamanhoDoEspacamento -ge 0) {
-        $spacing = " " * $tamanhoDoEspacamento
-        Write-Host "$textoDireita$spacing$textoEsquerda"
-    } 
-    else {
+    if ($tamanhoDoEspacamento -lt 0) {
         Write-Host $textoDireita
         Write-Host $textoEsquerda -ForegroundColor Yellow
+        return
     }
+
+    $espacamento = " " * $tamanhoDoEspacamento
+    Write-Host "$textoDireita$espacamento$textoEsquerda"
 }
 
 # Ferramentas
@@ -93,9 +93,9 @@ function Doc {
     Write-Host ("═" * $TAMANHO_DO_TERMINAL)
 
     $caminhos = @{
-        "xampp"  = "C:/xampp/htdocs"
+        "xampp"   = "C:/xampp/htdocs"
         "laragon" = "C:/laragon/www"
-        "github" = "$HOME/Documents/Github"
+        "github"  = "$HOME/Documents/Github"
         "default" = "$HOME/Documents"
     }
 
@@ -335,7 +335,8 @@ function Gg {
             else {
                 git push
             }
-        } else {
+        }
+        else {
             Imprimir-Mensagem "Enviando conteúdo local para o repositório remoto... " $false 'aviso'
             if ($u) {
                 git push --set-upstream origin (git branch --show-current) 2>&1 > $null
